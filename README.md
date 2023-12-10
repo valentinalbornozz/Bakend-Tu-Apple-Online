@@ -1,9 +1,3 @@
-# App-de-Gastos
+# Backend del ecommerce Tu apple Online en react
 
-App de simulación de gastos, donde se puede realizar la agregado de usuarios y consultar los datos guardados en la base de datos y los gastos que se agregen se puede dirijir a un usuario mediante el id que tomemos del usuario creado y si consultamos el usuario nos va a traer el usuario con los gastos que ha hecho
-
-para probar el codigo clonalo en tu pc y utiliza el siguiente codigo
-
-```
-npm run dev
-```
+App desarrollada para el backend del ecommerce tu apple online en react, donde tenemos todo el desarrollo del backend con la conexión a la base de datos, controladores para el login, registro, obtener el usuario por id, el procesador de pago para realizar el pago mediante stripe utilziando la api del mismo.
