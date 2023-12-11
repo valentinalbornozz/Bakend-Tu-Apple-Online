@@ -21,7 +21,7 @@ export class Server {
     private setupMiddleware(): void {
         this.app.use(express.json());
         this.app.use(cors({
-            origin: 'http://localhost:5173',
+            origin: '*',
             methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
             credentials: true,
         }));
