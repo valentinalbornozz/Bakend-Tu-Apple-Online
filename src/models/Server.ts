@@ -4,6 +4,9 @@ import controllers from "../controllers/Index.controller";
 import verifyToken from '../middleware/veryfyToken.middleware'; // Corregir el nombre del middleware
 import profileRoutes from "../routes/Profile.routes";
 import cors from "cors";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 export class Server {
     app: Express;
@@ -48,7 +51,7 @@ export class Server {
     }
 
     listen(): void {
-        const PORT = 3000;
+        const PORT = process.env.PORT;
         this.app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
         });
