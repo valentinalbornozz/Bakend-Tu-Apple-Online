@@ -18,16 +18,12 @@ export class Server {
         this.connectionDB();
     }
 
-    private setupMiddleware(): void {
+    setupMiddleware(): void {
+        this.app.use(cors());
         this.app.use(express.json());
-        this.app.use(cors({
-            origin: '*',
-            methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-            credentials: true,
-        }));
     }
 
-    private setupRoutes(): void {
+    setupRoutes(): void {
         // Rutas públicas, sin autenticación
         // Ruta para registro de usuarios
         this.app.post("/register", express.json(), controllers.register);
@@ -46,7 +42,7 @@ export class Server {
         this.app.post("/procesar_pago", express.json(), controllers.processPayment);
     }
 
-    private async connectionDB(): Promise<void> {
+    async connectionDB(): Promise<void> {
         await connectDB();
     }
 
