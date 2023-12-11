@@ -2,9 +2,11 @@ import { Request, Response } from 'express';
 import stripe from 'stripe';
 import OrderModel from '../models/Order.model';
 import PurchasedProductModel from '../models/PurchaseProduct.model';
+import dotenv from "dotenv";
 
+dotenv.config();
 
-const stripeSecretKey: string = 'sk_test_51Npt3zEFfNI88I7oKK84Qedyin7u16QIjjq8XaYPrCmax7d9hhHCwW2RX2a1Eqez2oUnSWktSNXY5q6yHUmZ3Ij200x0cPOZft';
+const stripeSecretKey: string = process.env.STRIPE_SECRET_KEY || '';
 const stripeClient = new stripe(stripeSecretKey);
 
 interface CartItem {
